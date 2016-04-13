@@ -1,0 +1,4 @@
+# Ignore all, but java & pdf files
+!*.java
+!*.pdf
+!README.md
