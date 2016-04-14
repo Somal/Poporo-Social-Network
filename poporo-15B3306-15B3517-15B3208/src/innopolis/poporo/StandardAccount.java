@@ -2,23 +2,32 @@ package innopolis.poporo;
 
 public class StandardAccount extends Account
 {
+	private StandardUser user;
+	private StandardPage page;
+	
+	public StandardAccount(){
+		this.page=new StandardPage();
+	}
 
 	@Override
-	public void openAccount() {
-		// TODO Auto-generated method stub
-		
+	public StandardUser openAccount() {
+		this.user=new StandardUser();
+		return this.user;
 	}
 
 	@Override
 	public void transmit(ContentItem ci) {
-		// TODO Auto-generated method stub
-		
+		this.page.upload(ci);
 	}
 
 	@Override
 	public void closeAccount() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Account was closed.");	
+	}
+
+	@Override
+	public boolean contains(ContentItem c) {
+		return this.page.containsContentItem(c);
 	}
 
 }
