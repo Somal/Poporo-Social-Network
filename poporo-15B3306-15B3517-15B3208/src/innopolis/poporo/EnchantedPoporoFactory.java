@@ -5,16 +5,20 @@ public class EnchantedPoporoFactory extends PoporoFactory {
 		
 	}
 	
-	public void createContentItem(){
+	public ContentItem createContentItem(){
+		return null;
 	}
 	
-	public void createUser(){			
+	public User createUser(){
+		return null;			
 	}
 	
-	public void createPage(){	
+	public Page createPage(){
+		return null;	
 	}
 	
-	public void createAccount(){	
+	public Account createAccount(){
+		return null;	
 	}
 
 }
