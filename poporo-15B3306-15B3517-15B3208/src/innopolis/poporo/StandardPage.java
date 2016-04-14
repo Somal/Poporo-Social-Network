@@ -1,11 +1,8 @@
 package innopolis.poporo;
 
 import java.util.LinkedList;
-import java.util.List;
 
 public class StandardPage extends Page {
-	
-	List<ContentItem> content;
 	
 	public StandardPage(){
 		
@@ -38,6 +35,12 @@ public class StandardPage extends Page {
 	@Override
 	public boolean containsContentItem(ContentItem c) {
 		return content.contains(c);
+	}
+
+	@Override
+	public void Draw() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
