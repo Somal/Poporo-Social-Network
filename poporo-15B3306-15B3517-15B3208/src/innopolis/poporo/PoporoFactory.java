@@ -1,24 +1,14 @@
 package innopolis.poporo;
 
-public abstract class PoporoFactory {
-	
-	public PoporoFactory() {
-		
-	}
-	
-	public ContentItem createContentItem(){
-		return null;
-	}
-	
-	public User createUser(){
-		return null;			
-	}
-	
-	public Page createPage(){
-		return null;	
-	}
-	
-	public Account createAccount(){
-		return null;	
-	}
+public abstract class PoporoFactory
+{
+
+    public abstract ContentItem createContentItem();
+
+    public abstract User createUser();
+
+    public abstract Page createPage();
+
+    public abstract Account createAccount();
+
 }

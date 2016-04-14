@@ -7,11 +7,11 @@ public class Client1 {
         pf = p;
     }
     
-    public void run() {
+    public void run()
+    {
         ContentItem c = pf.createContentItem();
         Page p = pf.createPage();
         User u = pf.createUser();
-        //sfsfs
     }
     
     public static void main(String[] args) {

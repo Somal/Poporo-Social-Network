@@ -1,7 +1,11 @@
 package innopolis.poporo;
 
-public class StandardAccount extends Account
+public class EnchantedAccount extends Account
 {
+	public EnchantedAccount()
+	{
+		
+	}
 
 	@Override
 	public void openAccount() {
