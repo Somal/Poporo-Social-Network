@@ -2,37 +2,41 @@ package innopolis.poporo;
 
 public class StandardAccount extends Account
 {
-	private StandardUser user;
-	private StandardPage page;
-	
-	public StandardAccount(){
-		this.page=new StandardPage();
-	}
 
-	@Override
-	public StandardUser openAccount() {
-		this.user=new StandardUser();
-		return this.user;
-	}
+    private StandardUser user;
+    private StandardPage page;
 
-	@Override
-	public void transmit(ContentItem ci) {
-		this.page.upload(ci);
-	}
+    public StandardAccount()
+    {
+        this.page = new StandardPage();
+    }
 
-	@Override
-	public void closeAccount() {
-		System.out.println("Account was closed.");	
-		this.page=null;
-		this.user=null;
-	}
+    @Override
+    public StandardUser openAccount()
+    {
+        this.user = new StandardUser();
+        System.out.println("StandardAccount has been opened.");
+        return this.user;
+    }
 
-	@Override
-	public boolean contains(ContentItem c) {
-		if (this.page != null)
-			return this.page.containsContentItem(c);
-		else
-			return false;
-	}
+    @Override
+    public void transmit(ContentItem ci)
+    {
+        page.upload(ci);
+    }
+
+    @Override
+    public void closeAccount()
+    {
+        this.page = null;
+        this.user = null;
+        System.out.println("StandardAccount has been closed.");
+    }
+
+    @Override
+    public boolean contains(ContentItem c)
+    {
+        return (this.page != null)? this.page.containsContentItem(c) : false;
+    }
 
 }
