@@ -8,7 +8,7 @@ public class StandardPage extends Page {
 	List<ContentItem> content;
 	
 	public StandardPage(){
-		
+		content = new LinkedList<ContentItem>();
 	}
 
 	public StandardPage(ContentItem c) {

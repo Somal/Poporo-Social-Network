@@ -8,7 +8,7 @@ public class EnchantedPage extends Page {
 	List<ContentItem> content;
 	
 	public EnchantedPage(){
-		
+		content = new LinkedList<ContentItem>();
 	}
 
 	public EnchantedPage(ContentItem c) {
