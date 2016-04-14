@@ -18,12 +18,16 @@ public class StandardPage extends Page {
 	
 	@Override
 	public void upload(ContentItem c) {
-		content.add(c);
+		if(!content.contains(c))
+			content.add(c);
 	}
 
 	@Override
 	public boolean remove(ContentItem c) {
-		return content.remove(c);
+		if (content.size() != 1)
+			return content.remove(c);
+		else
+			return content.contains(c);
 	}
 
 	@Override
