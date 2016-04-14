@@ -48,7 +48,7 @@ public class StandardPageTest {
 		
 		p.remove(c);
 		assertFalse(p.isEmptyPage());
-		assertTrue(p.containsContentItem(c));		
+		assertTrue(p.containsContentItem(c));	
 	}
 	
 	@Test
