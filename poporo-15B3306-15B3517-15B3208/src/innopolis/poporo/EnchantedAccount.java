@@ -28,13 +28,15 @@ public class EnchantedAccount extends Account
     @Override
     public void closeAccount()
     {
+        this.page = null;
+        this.user = null;
         System.out.println("EnchantedAccount has been closed.");
     }
 
     @Override
     public boolean contains(ContentItem c)
     {
-        return this.page.containsContentItem(c);
+        return (this.page != null)? this.page.containsContentItem(c) : false;
     }
 
 }

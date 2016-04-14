@@ -2,9 +2,10 @@ package innopolis.poporo;
 
 public class StandardAccount extends Account
 {
+
     private StandardUser user;
     private StandardPage page;
-    
+
     public StandardAccount()
     {
         this.page = new StandardPage();
@@ -14,7 +15,7 @@ public class StandardAccount extends Account
     public StandardUser openAccount()
     {
         this.user = new StandardUser();
-        System.out.println("StandardAccount has been opened.");  
+        System.out.println("StandardAccount has been opened.");
         return this.user;
     }
 
@@ -27,13 +28,15 @@ public class StandardAccount extends Account
     @Override
     public void closeAccount()
     {
-        System.out.println("StandardAccount has been closed.");  
+        this.page = null;
+        this.user = null;
+        System.out.println("StandardAccount has been closed.");
     }
 
     @Override
     public boolean contains(ContentItem c)
     {
-        return this.page.containsContentItem(c);
+        return (this.page != null)? this.page.containsContentItem(c) : false;
     }
 
 }
