@@ -2,27 +2,41 @@ package innopolis.poporo;
 
 public class EnchantedAccount extends Account
 {
-	public EnchantedAccount()
-	{
-		
-	}
 
-	@Override
-	public void openAccount() {
-		// TODO Auto-generated method stub
-		
-	}
+    private EnchantedUser user;
+    private EnchantedPage page;
 
-	@Override
-	public void transmit(ContentItem ci) {
-		// TODO Auto-generated method stub
-		
-	}
+    public EnchantedAccount()
+    {
+        this.page = new EnchantedPage();
+    }
 
-	@Override
-	public void closeAccount() {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public EnchantedUser openAccount()
+    {
+        this.user = new EnchantedUser();
+        System.out.println("EnchantedAccount has been opened.");
+        return this.user;
+    }
+
+    @Override
+    public void transmit(ContentItem ci)
+    {
+        page.upload(ci);
+    }
+
+    @Override
+    public void closeAccount()
+    {
+        this.page = null;
+        this.user = null;
+        System.out.println("EnchantedAccount has been closed.");
+    }
+
+    @Override
+    public boolean contains(ContentItem c)
+    {
+        return (this.page != null)? this.page.containsContentItem(c) : false;
+    }
 
 }

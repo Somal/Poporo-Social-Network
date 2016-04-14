@@ -5,7 +5,7 @@ import java.util.LinkedList;
 public class StandardPage extends Page {
 	
 	public StandardPage(){
-		
+		content = new LinkedList<ContentItem>();
 	}
 
 	public StandardPage(ContentItem c) {

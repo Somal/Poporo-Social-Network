@@ -2,7 +2,7 @@ package innopolis.poporo;
 
 public class StandardPoporoFactory extends PoporoFactory
 {
-    public StandardPpoporoFactory()
+    public StandardPoporoFactory()
     {
         System.out.println("-> Constructor of class StandardPpoporoFactory");
     }

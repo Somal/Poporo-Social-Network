@@ -9,4 +9,3 @@ public abstract class Page {
 	public abstract boolean containsContentItem ( ContentItem c );
 	public abstract void Draw();
 }
-

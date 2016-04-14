@@ -5,7 +5,7 @@ import java.util.LinkedList;
 public class EnchantedPage extends Page {
 	
 	public EnchantedPage(){
-		
+		content = new LinkedList<ContentItem>();
 	}
 
 	public EnchantedPage(ContentItem c) {
