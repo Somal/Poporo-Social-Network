@@ -1,5 +1,6 @@
 package innopolis.poporo;
 
-public class User {
+public class User
+{
 
 }
