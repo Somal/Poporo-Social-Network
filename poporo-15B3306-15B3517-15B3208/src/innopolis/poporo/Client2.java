@@ -8,7 +8,6 @@ public class Client2 {
 		StandardContentItem c1 = new StandardContentItem();
 		StandardContentItem c2 = new StandardContentItem();
 		//
-
 		sa.openAccount();
 		sa.transmit(c1);
 		//

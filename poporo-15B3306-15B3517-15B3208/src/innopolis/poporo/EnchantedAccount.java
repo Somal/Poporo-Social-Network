@@ -23,6 +23,7 @@ public class EnchantedAccount extends Account
     public void transmit(ContentItem ci)
     {
         page.upload(ci);
+        System.out.println("-> Method transmit of class EnchantedAccount");
     }
 
     @Override

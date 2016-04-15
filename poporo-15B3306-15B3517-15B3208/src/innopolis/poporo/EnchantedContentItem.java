@@ -1,8 +1,6 @@
 package innopolis.poporo;
 
-public class EnchantedContentItem extends ContentItem{
-	public EnchantedContentItem(){
-		
-	}
-
+public class EnchantedContentItem extends ContentItem
+{
+	public EnchantedContentItem(){ }
 }
