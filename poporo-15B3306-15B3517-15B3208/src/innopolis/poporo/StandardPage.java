@@ -28,7 +28,7 @@ public class StandardPage extends Page
     @Override
     public boolean remove(ContentItem c)
     {
-        return (content.size() > 1) ? content.remove(c) : content.contains(c);
+    	return (content.size() > 1) && content.remove(c);
     }
 
     @Override

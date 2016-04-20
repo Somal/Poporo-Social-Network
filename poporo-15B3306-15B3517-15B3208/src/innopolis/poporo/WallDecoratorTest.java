@@ -25,7 +25,7 @@ public class WallDecoratorTest {
 	}
 
 	@Test
-	public void test1() {
+	public void test01() {
 		ContentItem c1 = new StandardContentItem();
 		ContentItem c2 = new StandardContentItem();
 		//
@@ -37,7 +37,7 @@ public class WallDecoratorTest {
 	}
 
 	@Test
-	public void test2() {
+	public void test02() {
 		ContentItem c1 = new StandardContentItem();
 		ContentItem c2 = new StandardContentItem();
 		//
@@ -48,7 +48,7 @@ public class WallDecoratorTest {
 	}
 
 	@Test
-	public void test3() {
+	public void test03() {
 		ContentItem c1 = new StandardContentItem();
 		ContentItem c2 = new StandardContentItem();
 		//
@@ -63,7 +63,7 @@ public class WallDecoratorTest {
 	}
 
 	@Test
-	public void test4() {
+	public void test04() {
 		ContentItem c1 = new StandardContentItem();
 		//
 		w.upload(c1);
@@ -74,7 +74,7 @@ public class WallDecoratorTest {
 	}
 
 	@Test
-	public void test5() {
+	public void test05() {
 		for(int i=0; i<20; i++) {
 			w.upload(new StandardContentItem());
 		}
@@ -88,10 +88,9 @@ public class WallDecoratorTest {
 		assertFalse(w.has(new StandardContentItem(),new StandardContentItem()));
 		//		
 	}
-	
 
 	@Test
-	public void test6() {
+	public void test06() {
 		ContentItem c1 = new StandardContentItem();
 		ContentItem c2 = new StandardContentItem();
 		ContentItem c3 = new StandardContentItem();
@@ -110,7 +109,7 @@ public class WallDecoratorTest {
 	}
 
 	@Test
-	public void test7() {
+	public void test07() {
 		ContentItem c1 = new StandardContentItem();
 		ContentItem c2 = new StandardContentItem();
 		//
@@ -122,7 +121,7 @@ public class WallDecoratorTest {
 	}
 
 	@Test
-	public void test8() {
+	public void test08() {
 		ContentItem c1 = new StandardContentItem();
 		//
 		assertFalse(w.isEmptyPage());
@@ -136,7 +135,7 @@ public class WallDecoratorTest {
 	}
 	
 	@Test
-	public void test9() {
+	public void test09() {
 		ContentItem c1 = new StandardContentItem();
 		ContentItem c2 = new StandardContentItem();
 		w.upload(c1);
@@ -151,5 +150,87 @@ public class WallDecoratorTest {
 		assertFalse(w.containsContentItem(c2));
 	}
 
+	@Test
+	public void test10() {
+		ContentItem c1 = new StandardContentItem();
+		ContentItem c2 = new StandardContentItem();
+		w.upload(c1);
+		w.comment(c1, c2);
+		assertTrue(w.has(c1, c2));
+		//
+		w.uncomment(c1, c2);
+		assertFalse(w.has(c1, c2));
+	}
+	
+	@Test
+	public void test11() {
+		ContentItem c1 = new StandardContentItem();
+		ContentItem c2 = new StandardContentItem();
+		w.upload(c1);
+		//
+		w.uncomment(c1, c2);
+		assertFalse(w.has(c1, c2));
+		//
+		w.comment(c1, c2);
+		assertTrue(w.has(c1, c2));
+		//
+	}
+
+	@Test
+	public void test12() {
+		ContentItem c1 = new StandardContentItem();
+		ContentItem c2 = new StandardContentItem();
+		//
+		w.upload(c1);
+		w.comment(c1,c2);
+		//
+		boolean result = w.remove(c1);
+		assertTrue(result);
+	}
+
+	@Test
+	public void test13() {
+		ContentItem c1 = new StandardContentItem();
+		ContentItem c2 = new StandardContentItem();
+		ContentItem c3 = new StandardContentItem();
+		ContentItem c4 = new StandardContentItem();
+		//
+		w.upload(c1);
+		w.upload(c2);
+		//
+		w.comment(c1,c3);
+		assertTrue(w.has(c1, c3));
+		w.comment(c2,c3);
+		assertTrue(w.has(c1, c3));
+		assertTrue(w.has(c2, c3));
+		w.comment(c2,c4);
+		assertTrue(w.has(c1, c3));
+		assertTrue(w.has(c2, c3));
+		assertTrue(w.has(c2, c4));
+		//
+		w.uncomment(c1, c4);
+		assertTrue(w.has(c1, c3));
+		assertTrue(w.has(c2, c3));
+		assertTrue(w.has(c2, c4));
+		//
+		w.uncomment(c2,c3);
+		assertTrue(w.has(c1, c3));
+		assertTrue(w.has(c2, c4));
+		//
+		w.remove(c3);
+		assertTrue(w.has(c1, c3));
+		assertTrue(w.has(c2, c4));
+		//
+		w.remove(c1);;
+		assertTrue(w.has(c2, c4));
+		assertFalse(w.has(c1, c3));
+	}
+
+
+	@Test
+	public void test14() {
+		assertFalse(w.remove(c));
+		assertFalse(w.isEmptyPage());
+	}
 	
 }
